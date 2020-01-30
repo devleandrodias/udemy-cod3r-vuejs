@@ -1,0 +1,19 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="desafio">
+  <p>Usando Vue.js - Sou {{nome}}, tenho {{idade}} anos</p>
+
+  <p>{{idade * 3}}</p>
+  <p>{{idadeVezesTres()}}</p>
+
+  <p>{{Math.random()}}</p>
+  <p>{{random()}}</p>
+
+  <p>
+    <img v-bind:src="imagem" alt="image" height="200" width="200" />
+  </p>
+
+  <input type="text" v-bind:value="nome" />
+</div>
+
+<script src="./app.js"></script>

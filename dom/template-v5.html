@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+      <!--Ler valor apenas uma vez e interpolar ele, e não fica monitorando mais e resolve apenas a primeira vez-->
+      <p v-once>{{titulo}}</p>
+      <p>{{saudacao()}}</p>
+      <a v-bind:href="link">Google</a>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          titulo: "Usando Vue.js",
+          link: "http://google.com"
+        },
+        methods: {
+          saudacao() {
+            this.titulo = "Bom dia!!";
+            return this.titulo;
+          }
+        }
+      });
+      /*
+        Sempre que há uma mudanção no valor da instância o vue é automaticamente atualizado
+      */
+    </script>
+  </body>
+</html>
