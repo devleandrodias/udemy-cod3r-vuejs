@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Uma instância pode alterar a outra externamente -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app1">
+      {{titulo}}
+      <button @click="alterar">Alterar</button>
+    </div>
+
+    <!-- As propriedades reativas são criadas no momento que 
+      você passa o objeto de configuração para instância Vue -->
+
+    <script>
+      const vm1 = new Vue({
+        el: "#app1",
+        data: {
+          titulo: "Teste 1"
+        },
+        methods: {
+          alterar() {
+            this.titulo += "!!!";
+          }
+        }
+      });
+
+      vm1.novaIndo = "Teste";
+      console.log(vm1.novaIndo);
+    </script>
+  </body>
+</html>
